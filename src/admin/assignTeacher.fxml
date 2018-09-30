@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="381.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.AdminController">
+   <children>
+      <VBox layoutX="133.0" layoutY="45.0" prefHeight="213.0" prefWidth="222.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="15.0" top="5.0" />
+         </padding>
+         <children>
+            <ComboBox fx:id="TeachersId" layoutX="15.0" layoutY="192.0" onAction="#AssignTeacherCombobox" prefHeight="25.0" prefWidth="213.0" promptText="select teacher ID">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </ComboBox>
+            <TextField fx:id="txtName" editable="false" promptText="Name">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Serif Regular" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtSurname" editable="false" layoutX="15.0" layoutY="15.0" promptText="Surname">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Serif Regular" size="15.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="ClassPicker" prefHeight="25.0" prefWidth="213.0" promptText="Choose Grade">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </ComboBox>
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#AssignTeacherToClass" prefHeight="28.0" prefWidth="61.0" text="Save">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Serif Regular" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Label layoutX="21.0" layoutY="56.0" text="Employee ID">
+         <font>
+            <Font name="Serif Regular" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="85.0" text="First Name">
+         <font>
+            <Font name="Serif Regular" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="148.0" text="Assign To Grade">
+         <font>
+            <Font name="Serif Regular" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="118.0" text="Last Name">
+         <font>
+            <Font name="Serif Regular" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="6.0" prefHeight="35.0" prefWidth="303.0" text="Register Student" textAlignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSurname" layoutX="15.0" layoutY="280.0" prefHeight="17.0" prefWidth="132.0" textFill="RED" />
+      <Label fx:id="lblDatePick" layoutX="14.0" layoutY="297.0" prefHeight="17.0" prefWidth="124.0" textFill="RED" />
+      <Label fx:id="lblContact" layoutX="14.0" layoutY="321.0" prefHeight="17.0" prefWidth="124.0" textFill="RED" />
+      <Label fx:id="lblNkName" layoutX="14.0" layoutY="343.0" prefHeight="17.0" prefWidth="179.0" textFill="RED" />
+      <Label fx:id="lblAddress" layoutX="14.0" layoutY="365.0" prefHeight="17.0" prefWidth="132.0" textFill="RED" />
+      <Label fx:id="lblName" layoutX="15.0" layoutY="244.0" prefHeight="17.0" prefWidth="132.0" textFill="RED" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Teacher.TeacherController">
+   <bottom>
+      <AnchorPane prefHeight="20.0" prefWidth="1000.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton layoutX="144.0" onAction="#LoadSubjects" ripplerFill="WHITE" style="-fx-background-color: #3ccc71;" text="Load Subjects" textFill="WHITE" />
+            <JFXButton layoutX="43.0" onAction="#loadStudentListView" prefHeight="25.0" prefWidth="98.0" ripplerFill="WHITE" style="-fx-background-color: #3ccc71;" text="Load Class List" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="640.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane prefHeight="640.0" prefWidth="1000.0" style="-fx-background-color: #fff;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="Class List">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TabPane prefHeight="596.0" prefWidth="999.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Class Register">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <AnchorPane layoutX="47.0" layoutY="47.0" prefHeight="532.0" prefWidth="610.0" style="-fx-background-color: #3c8eae;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <JFXButton buttonType="RAISED" layoutX="163.0" layoutY="33.0" onAction="#LoadClassRegister" prefHeight="38.0" prefWidth="92.0" ripplerFill="WHITE" style="-fx-background-color: #3ccc71;" text="Load Class list" textFill="WHITE" />
+                                                      <TableView fx:id="classRegisterTableView" layoutX="419.0" layoutY="27.0" prefHeight="510.0" prefWidth="452.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="STUDENT_ID" prefWidth="115.0" text="Student Number" />
+                                                          <TableColumn fx:id="STUDENT_NAME" prefWidth="90.33331298828125" text="Name" />
+                                                            <TableColumn fx:id="STUDENT_SURNAME" prefWidth="100.66668701171875" text="Surname" />
+                                                            <TableColumn fx:id="ATTENDANCE" prefWidth="145.3333740234375" text="Present/Absent" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Enter and View Assessment Marks">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <AnchorPane layoutX="33.0" layoutY="33.0" prefHeight="532.0" prefWidth="610.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <AnchorPane layoutX="81.0" layoutY="106.0" prefHeight="532.0" prefWidth="712.0" style="-fx-background-color: #1ac0c9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <HBox layoutX="309.0" layoutY="37.0" prefHeight="517.0" prefWidth="679.0">
+                                                               <children>
+                                                                  <TableView fx:id="tableClassList" onMouseClicked="#OnTableStudentAssessClick" prefHeight="554.0" prefWidth="679.0">
+                                                                    <columns>
+                                                                      <TableColumn fx:id="STUDENT_NO" prefWidth="98.33334350585938" resizable="false" text="Studet Number" />
+                                                                      <TableColumn fx:id="S_NAME" prefWidth="81.0" resizable="false" text="Name" />
+                                                                        <TableColumn fx:id="S_lASTNAME" prefWidth="105.0" resizable="false" text="Surname" />
+                                                                        <TableColumn fx:id="SUB_NAME" prefWidth="108.0" resizable="false" text="Subject Name" />
+                                                                        <TableColumn fx:id="ASSESS_NAME" prefWidth="128.0" resizable="false" text="Assessment Name" />
+                                                                        <TableColumn fx:id="RESULT" prefWidth="60.66668701171875" resizable="false" text="Result" />
+                                                                        <TableColumn fx:id="OVERALL_MARK" prefWidth="95.0" resizable="false" text="Overall Mark" />
+                                                                    </columns>
+                                                                  </TableView>
+                                                               </children>
+                                                            </HBox>
+                                                            <JFXButton buttonType="RAISED" layoutX="619.0" layoutY="6.0" onAction="#LoadingClassList" prefHeight="24.0" prefWidth="113.0" ripplerFill="WHITE" style="-fx-background-color: #3ccc71;" text="Load Assessments" textFill="WHITE" />
+                                                            <JFXButton buttonType="RAISED" layoutX="5.0" layoutY="511.0" onAction="#EnterStudentMarks" prefHeight="32.0" prefWidth="76.0" ripplerFill="WHITE" style="-fx-background-color: #62cad3;" text="Enter Mark" textFill="WHITE" />
+                                                            <AnchorPane layoutX="12.0" layoutY="7.0" prefHeight="442.0" prefWidth="271.0" style="-fx-background-color: #fff;">
+                                                               <children>
+                                                                  <ListView fx:id="studentListView" layoutX="10.0" layoutY="10.0" prefHeight="237.0" prefWidth="229.0" />
+                                                                  <VBox layoutX="127.0" layoutY="268.0" prefHeight="122.0" prefWidth="136.0">
+                                                                     <children>
+                                                                        <ComboBox fx:id="subjectComboBox" onAction="#LoadComboBoxAssessments" prefWidth="150.0">
+                                                                           <VBox.margin>
+                                                                              <Insets top="5.0" />
+                                                                           </VBox.margin>
+                                                                        </ComboBox>
+                                                                        <ComboBox fx:id="assessmentNameComboBox" prefWidth="150.0">
+                                                                           <VBox.margin>
+                                                                              <Insets top="5.0" />
+                                                                           </VBox.margin>
+                                                                        </ComboBox>
+                                                                        <TextField fx:id="studentMarksTxt" promptText="Student Mark">
+                                                                           <VBox.margin>
+                                                                              <Insets top="5.0" />
+                                                                           </VBox.margin>
+                                                                           <font>
+                                                                              <Font name="Serif Regular" size="14.0" />
+                                                                           </font>
+                                                                        </TextField>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox layoutX="8.0" layoutY="274.0" prefHeight="152.0" prefWidth="118.0">
+                                                                     <children>
+                                                                        <Label prefHeight="17.0" prefWidth="115.0" text="Subject">
+                                                                           <font>
+                                                                              <Font name="Serif Regular" size="15.0" />
+                                                                           </font>
+                                                                           <VBox.margin>
+                                                                              <Insets top="5.0" />
+                                                                           </VBox.margin>
+                                                                        </Label>
+                                                                        <Label prefHeight="18.0" prefWidth="117.0" text="Assessment Name">
+                                                                           <font>
+                                                                              <Font name="Serif Regular" size="15.0" />
+                                                                           </font>
+                                                                           <VBox.margin>
+                                                                              <Insets top="15.0" />
+                                                                           </VBox.margin>
+                                                                        </Label>
+                                                                        <Label prefHeight="18.0" prefWidth="116.0" text="Student Mark">
+                                                                           <font>
+                                                                              <Font name="Serif Regular" size="15.0" />
+                                                                           </font>
+                                                                           <VBox.margin>
+                                                                              <Insets top="13.0" />
+                                                                           </VBox.margin>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <JFXButton fx:id="updateMark" buttonType="RAISED" disable="true" layoutX="87.0" layoutY="511.0" onAction="#UpdateStudentMark" prefHeight="32.0" prefWidth="86.0" ripplerFill="WHITE" style="-fx-background-color: #ff9900;" text="Update Mark" textFill="WHITE" />
+                                                            <ComboBox fx:id="filterbySub" layoutX="407.0" layoutY="7.0" onAction="#LoadingClassList" prefWidth="150.0" promptText="Filter by Subject" />
+                                                            <JFXButton buttonType="RAISED" layoutX="177.0" layoutY="510.0" onAction="#DeleteStudentAssessment" prefHeight="32.0" prefWidth="63.0" ripplerFill="WHITE" style="-fx-background-color: #e70a0a;" text="Delete" textFill="WHITE" />
+                                                            <JFXButton buttonType="RAISED" layoutX="244.0" layoutY="510.0" onAction="#ClearStudentAssessment" prefHeight="32.0" prefWidth="56.0" ripplerFill="WHITE" style="-fx-background-color: #ff5f1c;" text="Clear" textFill="WHITE" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Assessments">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="41.0" layoutY="45.0" prefHeight="136.0" prefWidth="120.0">
+                                 <children>
+                                    <Label layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="123.0" text="Name" textAlignment="RIGHT">
+                                       <VBox.margin>
+                                          <Insets bottom="7.0" top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="Serif Regular" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="27.0" prefHeight="17.0" prefWidth="123.0" text="Weighting" textAlignment="RIGHT">
+                                       <VBox.margin>
+                                          <Insets bottom="7.0" top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="Serif Regular" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="44.0" prefHeight="17.0" prefWidth="123.0" text="Total" textAlignment="RIGHT">
+                                       <VBox.margin>
+                                          <Insets bottom="7.0" top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="Serif Regular" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="109.0" prefHeight="17.0" prefWidth="123.0" text="Subject" textAlignment="RIGHT">
+                                       <font>
+                                          <Font name="Serif Regular" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="160.0" layoutY="46.0" prefHeight="140.0" prefWidth="125.0">
+                                 <children>
+                                    <TextField fx:id="AssName" layoutX="10.0" layoutY="10.0">
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="Serif Regular" size="15.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="AssWeight" layoutX="10.0" layoutY="35.0">
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="Serif Regular" size="15.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="AssTotal" layoutX="10.0" layoutY="60.0">
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="Serif Regular" size="15.0" />
+                                       </font>
+                                    </TextField>
+                                    <ComboBox fx:id="SubComboBox" prefWidth="150.0" promptText="Select Subject">
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                 </children>
+                              </VBox>
+                              <ListView fx:id="listView" layoutX="43.0" layoutY="269.0" onMouseClicked="#LoadAssessments" prefHeight="218.0" prefWidth="248.0" />
+                              <TableView fx:id="assessmentTableView" layoutX="391.0" layoutY="4.0" onMouseClicked="#onAssessmentTableClick" prefHeight="561.0" prefWidth="425.0">
+                                <columns>
+                                  <TableColumn fx:id="ASSESSMENT_ID" prefWidth="93.66665649414062" resizable="false" text="Assessment ID" />
+                                  <TableColumn fx:id="ASSESSMENT_NAME" prefWidth="75.66668701171875" resizable="false" text="Name" />
+                                    <TableColumn fx:id="ASSESSMENT_WEIGHTING" prefWidth="83.66668701171875" resizable="false" text="Weighting" />
+                                    <TableColumn fx:id="ASSESSMENT_TOTAL" prefWidth="48.33331298828125" resizable="false" text="Total" />
+                                    <TableColumn fx:id="SUBJECT_NAME" prefWidth="120.66668701171875" resizable="false" text="Subject Name" />
+                                </columns>
+                              </TableView>
+                              <JFXButton layoutX="46.0" layoutY="520.0" onAction="#LoadAssessments" prefHeight="38.0" prefWidth="161.0" ripplerFill="WHITE" style="-fx-background-color: #3ccc71;" text="Load All Assessments" textFill="WHITE" />
+                              <JFXButton buttonType="RAISED" layoutX="168.0" layoutY="188.0" ripplerFill="WHITE" style="-fx-background-color: #5fa437;" text="Update" textFill="WHITE" />
+                              <JFXButton buttonType="RAISED" layoutX="229.0" layoutY="188.0" onAction="#DeleteAssessment" ripplerFill="WHITE" style="-fx-background-color: #e70a0a;" text="Delete" textFill="WHITE" />
+                              <JFXButton buttonType="RAISED" layoutX="46.0" layoutY="188.0" onAction="#CreateAssessment" ripplerFill="WHITE" style="-fx-background-color: #167ea7;" text="Create Assessment" textFill="WHITE" />
+                              <JFXButton buttonType="RAISED" layoutX="286.0" layoutY="187.0" onAction="#ClearAssessmentFields" ripplerFill="WHITE" style="-fx-background-color: #ff5f1c;" text="Clear" textFill="WHITE" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Generate Reports">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane layoutX="232.0" layoutY="120.0" prefHeight="567.0" prefWidth="999.0" style="-fx-background-color: #2d70a3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane layoutX="26.0" layoutY="14.0" prefHeight="363.0" prefWidth="936.0" style="-fx-background-color: #fff;">
+                                       <children>
+                                          <ListView fx:id="GenerateStudentList" layoutX="18.0" layoutY="48.0" onMouseClicked="#LoadGenerateAssessmentList" prefHeight="302.0" prefWidth="221.0" />
+                                          <TableView fx:id="genAssessmentTableView" layoutX="318.0" layoutY="50.0" prefHeight="296.0" prefWidth="310.0">
+                                             <columns>
+                                                <TableColumn fx:id="subjectName" prefWidth="95.66665649414062" resizable="false" text="Subject" />
+                                                <TableColumn fx:id="asessName" prefWidth="119.66668701171875" resizable="false" text="Assessment Name" />
+                                                <TableColumn fx:id="studentResult" prefWidth="93.33331298828125" resizable="false" text="Mark" />
+                                             </columns>
+                                          </TableView>
+                                          <HBox layoutX="662.0" layoutY="49.0" prefHeight="240.0" prefWidth="243.0">
+                                             <children>
+                                                <VBox prefHeight="301.0" prefWidth="155.0">
+                                                   <children>
+                                                      <Label text="English">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="10.0" layoutY="78.0" text="Afrikaans">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="10.0" layoutY="10.0" text="Mathametics">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="10.0" layoutY="27.0" text="Life Orientation">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label layoutX="10.0" layoutY="44.0" text="Physical Science">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="10.0" prefHeight="240.0" prefWidth="83.0">
+                                                   <children>
+                                                      <Label fx:id="lblEnglish" prefHeight="23.0" prefWidth="73.0">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="lblAfrikaans" layoutX="10.0" layoutY="10.0" prefHeight="23.0" prefWidth="77.0">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="lblMaths" layoutX="10.0" layoutY="27.0" prefHeight="23.0" prefWidth="74.0">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="lblLo" layoutX="10.0" layoutY="44.0" prefHeight="23.0" prefWidth="78.0">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="lblSub1" layoutX="10.0" layoutY="61.0" prefHeight="23.0" prefWidth="74.0">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="lblSub2" layoutX="10.0" layoutY="78.0" prefHeight="23.0" prefWidth="73.0">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label fx:id="lblSub3" layoutX="10.0" layoutY="95.0" prefHeight="23.0" prefWidth="73.0">
+                                                         <font>
+                                                            <Font name="Serif Regular" size="20.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets left="5.0" top="10.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <Label layoutX="697.0" layoutY="7.0" prefHeight="28.0" prefWidth="171.0" text="Subject Totals">
+                                             <font>
+                                                <Font name="Serif Regular" size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton buttonType="RAISED" layoutX="679.0" layoutY="294.0" onAction="#CalculateSubjectTotal" prefHeight="33.0" prefWidth="175.0" ripplerFill="WHITE" style="-fx-background-color: #4c66a4;" text="Calculate Subject Totals" textFill="WHITE" />
+                                          <Label layoutX="27.0" layoutY="6.0" prefHeight="30.0" prefWidth="203.0" text="Please select a Student">
+                                             <font>
+                                                <Font name="Serif Regular" size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="367.0" layoutY="9.0" prefHeight="26.0" prefWidth="206.0" text="Student Assessments">
+                                             <font>
+                                                <Font name="Serif Regular" size="22.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <TextArea fx:id="teacherComment" layoutX="28.0" layoutY="421.0" prefHeight="156.0" prefWidth="231.0" />
+                                    <JFXButton buttonType="RAISED" layoutX="474.0" layoutY="447.0" onAction="#CreatePdf" prefHeight="85.0" prefWidth="189.0" ripplerFill="WHITE" style="-fx-background-color: #29e01c;" text="Generate Report" />
+                                    <Label layoutX="36.0" layoutY="384.0" prefHeight="30.0" prefWidth="203.0" text="Teacher comment" textFill="WHITE">
+                                       <font>
+                                          <Font name="Serif Regular" size="22.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="27.0" prefWidth="1000.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="564.0" layoutY="3.0" prefHeight="18.0" prefWidth="88.0" text="Logged In As:">
+               <font>
+                  <Font name="Serif Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="userLoginLabal" layoutX="662.0" layoutY="3.0" prefHeight="17.0" prefWidth="183.0">
+               <font>
+                  <Font name="Serif Regular" size="15.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="896.0" onAction="#LogoutButton" prefHeight="26.0" prefWidth="66.0" ripplerFill="BLACK" style="-fx-background-color: #aeb4c9;" text="Log Out" textFill="WHITE" />
+         </children></AnchorPane>
+   </top>
+</BorderPane>
